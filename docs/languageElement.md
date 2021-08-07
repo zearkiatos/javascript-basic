@@ -32,3 +32,5 @@ var person = {
 };
 
 `
+
+`NaN = Not a Number`
