@@ -1,5 +1,7 @@
 function rockPaperOrScissorsWithSwitch(player1, player2) {
-
+  let winner = "";
+  let winnerOption = "";
+  
   if (player1 === player2) return "Player1 and Player2 are tie";
 
   if (player1 === "rock" && player2 === "scissors") {
