@@ -44,4 +44,35 @@ describe("Test suite for array functions", () => {
     expect(articlesNames.length).toBe(7);
     expect(articlesNames).toEqual(expectedValue);
   });
+
+  test("Should search an object into the articles", () => {
+    const expectedValue = { name: "Notebook", cost: 20000, icon: "💻" };
+    const articleFound = articles.find(
+      (article) => article.name === "Notebook"
+    );
+
+    expect(articleFound).toEqual(expectedValue);
+  });
+
+  test("Should loop the articles", () => {
+    const expectedValue = [
+      "Bicycle",
+      "TV",
+      "Book",
+      "Smartphone",
+      "Notebook",
+      "Keyboard",
+      "Headphones",
+    ];
+
+    articles.forEach((article, key) => {
+      expect(article.name).toEqual(expectedValue[key]);
+    });
+  });
+
+  test("Should return true or false if exist some element than complete with the conditionals with a new array", () => {
+    const cheapArticles = articles.some(article => article.cost <= 700);
+
+    expect(cheapArticles).toBeTruthy();
+  });
 });
